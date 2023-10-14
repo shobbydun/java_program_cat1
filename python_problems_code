@@ -1,0 +1,89 @@
+//cat1 Question 2
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+// Java Program to Compute the Sum of
+// Numbers in a List Using For-Loop
+import java.util;
+import java.io;
+
+class revision {
+    public static void main(String[] args){
+
+        //the 3N+1 problem
+
+        //int input;
+        Scanner myobj = new Scanner(System.in); //create scanner object
+        System.out.println("Input a positive integer");
+        int input = myobj.nextInt(); //read user input
+
+        while(input != 1){
+            if(input % 2 == 0){
+                input = input/2;
+            
+            }
+            else
+            input = 3*input+1;
+            System.out.println(input + "\t");
+            System.out.println(input);
+            
+        }
+
+
+        //Question3
+        //copying lists and assign one to each element
+
+        int list1[] = {1,2,3,4,5,6};
+        int list2[] = new int[list1.length];
+
+        for(int i = 0; i<list1.length; i++){
+            list2[i] = list1[i];
+        }
+        for(int i=0; i<list2.length;i++){
+            System.out.print(list2[i]+"");
+        }
+
+
+        //adding one to each element
+
+        for(int i = 0; i<list1.length; i++){
+            System.out.print(list1[i]);
+            System.out.print("\n");
+        }
+        for(int i=0; i<list1.length; i++){
+            list1[i] = list1[i]+1;
+
+        }
+        System.out.println("");
+
+
+        for(int i=0;i<list1.length;i++){
+            System.out.print(list1[i]);
+            System.out.print("");
+        }
+
+        
+        
+        //summation of list2
+
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+
+        int sum = 0;
+        for (Integer i : list)
+            sum += i;
+ 
+        System.out.println("\nThe sum of list2: " + sum);
+        
+
+
+        
+
+    }
+}
