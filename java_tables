@@ -1,0 +1,33 @@
+
+import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.table.*;
+import java.awt.*;
+
+class Tables_java {
+
+    public static void main(String args[]){
+
+        JFrame frame = new JFrame();
+
+        String[] columNames = {"Studied", "Fname", "Lname","department","DOB","gender"};
+
+        Object[][] data = {
+            {"JKUAT", "Dun","Kim","COPAS", "september 2003","Male"},
+            {"KU", "June","Ham","SCIT", "November 2000","Female"},
+            {"MKU", "Sam","Duke","KIbaki DEp", "Oct 2000","Male"}
+        };
+
+        JTable student_details = new JTable(data, columNames);
+
+        frame.add(student_details);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 400);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+ 
+
+    } 
+    
+}
