@@ -1,0 +1,58 @@
+
+class Bird{
+    public void Sing(){
+        System.out.println("Tweet,tweet,tweet");
+    }
+}
+
+class ndege extends Bird{
+    public void Sing(){
+        System.out.println("tooooo,tooooo,toooo");
+    }
+}
+
+class tausi extends Bird{
+    public void Sing(){
+        System.out.println("laaaaa,laaaaaa,laaaaaaaa");
+    }
+}
+
+public class polymorphism {
+    public static void main(String[] args){
+        Bird b = new Bird();
+        b.Sing();
+
+        ndege n = new ndege();
+        n.Sing();
+
+        //encapsulation
+        student s = new student();
+        s.setName("Suzzie");
+        s.setAge(20);
+
+        System.out.println(s.getName());
+        System.out.println(s.getAge());
+    }
+}
+
+
+//encapsulation
+class student{
+
+    private String name;
+    private int age;
+
+    public void setName(String newNmame){
+        name = newNmame;
+    }
+    public String getName(){
+        return name;
+    }
+
+    public void setAge(int newAge){
+        age = newAge;
+    }
+    public int getAge(){
+        return age;
+    }
+}
