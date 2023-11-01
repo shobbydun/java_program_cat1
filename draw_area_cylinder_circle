@@ -1,0 +1,73 @@
+import java.io.*;
+import java.lang.Math;
+abstract class shape{
+    
+    
+    public abstract void draw();
+    public abstract double calculateArea();
+
+}
+
+
+class circle extends shape{
+    private double radius;
+
+    public circle(double radius){
+        this.radius = radius;
+    }
+
+    @Override
+    public void draw(){
+        System.out.println("Draw circle");
+    }
+
+    @Override
+    public double calculateArea(){
+        return Math.PI * radius * radius;
+    }
+
+    protected double getRadius(){
+        return radius;
+    }
+
+
+}
+
+class cylinder extends circle{
+
+    private double height;
+    
+    public cylinder(double radius, double height){
+        super(radius);
+        this.height = height;
+
+    }
+
+    @Override
+    public void draw(){
+        System.out.println("draw cylinder");
+    }
+
+    @Override
+    public double calculateArea(){
+        double circleArea = super.calculateArea();
+        double sideArea = 2 * Math.PI * getRadius() * height;
+        return 2 * circleArea + sideArea;
+    }
+}
+
+public class classes{
+    public static void main(String[] args){
+        shape circle = new circle(4.0);
+        shape cyclinder = new cylinder(5.0, 9.0);
+
+        drawAndCalculateAarea(circle);
+        drawAndCalculateAarea(cyclinder);
+    }
+
+    public static void drawAndCalculateAarea(shape shape){
+        shape.draw();
+        double area = shape.calculateArea();
+        System.out.println("Area: " +area);
+    }
+}
