@@ -1,0 +1,58 @@
+// Java Program to add an element in an Array    
+import java.io.*; 
+import java.lang.*; 
+import java.util.*; 
+   
+//Transferring values from array1 to array2 using for loop and adding new item
+class transferArrays{
+    public static void main(String[] args){
+
+        //create the arrays
+        int array1[] = {30,70,20,60,60,15};
+        int array2[] = new int[array1.length];
+
+        //transfering the arrays
+        for(int i=0; i<array1.length; i++){
+
+            array2[i] = array1[i];
+            System.out.println(array2[i]+ "");
+
+        }
+        //adding an element at the end
+        //int array1[] = {0,70,20,60,60,15};
+        int newElement = 120;
+        int newestArray[] = Arrays.copyOf(array1,array1.length + 1);
+        newestArray[array1.length] = newElement;
+
+        System.out.println("My new array: " +Arrays.toString(array1));
+
+
+
+        //declare the max value
+       int maximumNumber = array1[0];
+
+       //find max using loop
+       for(int i = 1; i<array1.length;i++){
+        if(array1[i]>maximumNumber){
+            maximumNumber = array1[i];
+        }
+       }
+
+       //output largest number
+       System.out.println("The largest number is: " +maximumNumber);
+
+
+
+       //adding elemrnts adding elements in multidimensional arrys
+       int[][] mymultiDarray = new int[2][2];
+       mymultiDarray [0][0] = 1;
+       mymultiDarray [0][1] = mymultiDarray[1][0] = 0;
+       mymultiDarray[1][1] = 1;
+       System.out.println("MultiDImensional elements are: ");
+       System.out.println(mymultiDarray[0][0] + "" + mymultiDarray[0][1]);
+       System.out.println(mymultiDarray[1][0] + "" + mymultiDarray[1][1]);
+       
+    }
+
+
+}
