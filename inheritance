@@ -1,0 +1,110 @@
+
+ class Mouse1 extends Mouse{
+
+    String texture = "Matte";
+
+   
+    public static void setColor(String color){
+        System.out.println(color);
+    }
+}
+
+
+
+ class Mouse2 extends Mouse{
+
+
+    public static void connect(){
+        System.out.println("Connect to bluetooth");
+    }
+
+}
+
+
+ class Mouse3 extends Mouse{
+
+    boolean ambitious = true;
+
+   
+}
+
+
+class Mouse{
+    
+    public static void leftClick(){
+       System.out.println("click"); 
+    }
+
+    public static void rightClick(){
+        System.out.println("click Right");
+    }
+
+    public static void scrolUp(){
+        System.out.println("scrolled up");
+    }
+}
+
+public class Inherit{
+    public static void main(String[] args){
+        Mouse m1 = new Mouse1();
+        Mouse m2 = new Mouse2();
+
+        car c = new car();
+        System.out.println(c.maxspeed);
+
+        m2.leftClick();
+        m2.rightClick();
+        m2.scrolUp();
+
+
+        student st = new student();
+        
+
+    }
+}
+
+
+
+//Super keyword
+class vehicle{
+    int maxspeed = 120;
+
+    public void vroom(){
+        System.out.println("Vrooom skrrrt");
+    }
+
+}
+class car extends vehicle{
+
+    int maxspeed = 100;
+
+    public void vroom(){
+        super.vroom();
+    }
+
+    public void display(){
+        System.out.println(super.maxspeed); //super used to
+                                            //take from the super class
+    }
+    
+}
+
+
+//constructor is a method that makes an object
+//class makes the object 
+
+class student {
+    student(){
+        System.out.println("Student constructor");
+    }
+}
+
+class person extends student{
+
+    int maxMarks;
+
+    person(int maxMarks){
+        System.out.println("Person Constructor");
+        this.maxMarks = maxMarks;
+    }
+}
